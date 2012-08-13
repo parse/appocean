@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813131656) do
+ActiveRecord::Schema.define(:version => 20120813151021) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20120813131656) do
     t.string   "key"
     t.text     "value"
     t.integer  "user_id"
-    t.integer  "island_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

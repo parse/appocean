@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
+
+  attr_accessible :username, :password
+
   has_many :user_metas
   has_many :friendships
 

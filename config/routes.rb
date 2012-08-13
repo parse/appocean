@@ -1,10 +1,27 @@
 Appocean::Application.routes.draw do
   root :to => "home#index"
+  current_api_routes = lambda do
+      resources :users do
+          get 'login'
+        end
+    end
 
-  resources :users do
-    get 'index'
-    get 'show'
+  namespace :api do
+    scope :module => :v1, &current_api_routes
+    namespace :v1, &current_api_routes
+
+    #namespace :v2 do
+      # Define API v2 routes
+    #end
+
+    #namespace :v1 do
+      # Define API v1 routes
+    #end
+
+    match ":api/*path", :to => redirect("/api/v1/%{path}")
   end
+    
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
