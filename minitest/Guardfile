@@ -1,0 +1,3 @@
+guard 'shell' do
+  watch(/minitest_api\.rb/) { `clear && ruby minitest_api.rb` }
+end

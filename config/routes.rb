@@ -2,8 +2,10 @@ Appocean::Application.routes.draw do
   root :to => "home#index"
   current_api_routes = lambda do
       resources :users do
-          get 'login'
-        end
+        get 'login'
+      end
+
+      resources :messages
     end
 
   namespace :api do
